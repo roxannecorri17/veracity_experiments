@@ -100,3 +100,31 @@ search_uncertainty <- df %>%
   )
 
 search_uncertainty
+
+# ------------------------------------------------------------
+# 5. English-French score consistency
+# ------------------------------------------------------------
+
+score_consistency <- df %>%
+  mutate(pair_id = ceiling(row_number() / 2)) %>%
+  group_by(pair_id) %>%
+  summarise(
+    english_score = veracity_score[lg == "English"][1],
+    french_score  = veracity_score[lg == "French"][1],
+    .groups = "drop"
+  ) %>%
+  mutate(
+    score_difference = abs(english_score - french_score),
+    score_consistency = case_when(
+      score_difference < 10 ~ "Yes",
+      score_difference <= 30 ~ "Partially",
+      score_difference > 30 ~ "No",
+      TRUE ~ NA_character_
+    )
+  )
+
+score_consistency %>%
+  count(score_consistency) %>%
+  mutate(
+    percent = 100 * n / sum(n)
+  )
