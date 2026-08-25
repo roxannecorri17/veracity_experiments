@@ -1,5 +1,8 @@
+# Data cleaning and tidy conversion 
+#=============================================
+
 library(tidyverse)
-df <- read_csv("tidy_exp3.csv",
+df <- read_csv("data/tidy_exp3.csv",
                 skip = 2,
                 col_names = c("id","variant","lg","ground_truth","score","sources_count",
                               "justification_similarity","score_similarity","sources_similarity","overall_consistency"))
