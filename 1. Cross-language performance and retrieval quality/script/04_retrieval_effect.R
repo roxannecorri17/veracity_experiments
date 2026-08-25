@@ -12,20 +12,20 @@ library(readxl)
 # ------------------------------------------------------------
 
 dataset_false <- read_csv(
-  "data/veracity_1.3 - false_cvs.csv"
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3 - false_cvs.csv"
 )
 
 dataset_true <- read_csv(
-  "data/veracity_1.3 - true_cvs.csv"
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3 - true_cvs.csv"
 )
 
 false_sources <- read_excel(
-  "data/veracity_1.3.xlsx",
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3.xlsx",
   sheet = "false_sources"
 )
 
 true_sources <- read_excel(
-  "data/veracity_1.3.xlsx",
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3.xlsx",
   sheet = "true_sources"
 )
 
@@ -325,7 +325,7 @@ dir.create(
 )
 
 ggsave(
-  "figures/retrieval_effect_png/retrieval_quality_vs_score.png",
+  "1. Cross-language performance and retrieval quality/figures/retrieval_effect_png/retrieval_quality_vs_score.png",
   plot = graph_retrieval_score,
   width = 10,
   height = 6,

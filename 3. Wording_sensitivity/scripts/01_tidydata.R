@@ -2,7 +2,7 @@
 #=============================================
 
 library(tidyverse)
-df <- read_csv("data/tidy_exp3.csv",
+df <- read_csv("3. Wording_sensitivity/data/tidy_exp3.csv",
                 skip = 2,
                 col_names = c("id","variant","lg","ground_truth","score","sources_count",
                               "justification_similarity","score_similarity","sources_similarity","overall_consistency"))

@@ -11,7 +11,7 @@ library(tidyverse)
 # ============================================================
 
 df <- read_csv(
-  "data/tidy_exp3.csv",
+  "3. Wording_sensitivity/data/tidy_exp3.csv",
   skip = 2,
   col_names = c(
     "id",
@@ -271,7 +271,7 @@ similarity_language_plot
 
 
 ggsave(
-  "figures/similarity_by_language.png",
+  "3. Wording_sensitivity/figures/similarity_by_language.png",
   plot = similarity_language_plot,
   width = 10,
   height = 5,
@@ -381,7 +381,7 @@ similarity_variant_plot
 
 
 ggsave(
-  "figures/similarity_by_variant.png",
+  "3. Wording_sensitivity/figures/similarity_by_variant.png",
   plot = similarity_variant_plot,
   width = 7,
   height = 5,

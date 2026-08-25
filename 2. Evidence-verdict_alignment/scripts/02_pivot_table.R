@@ -1,49 +1,102 @@
-#2. PIVOT RESULTS
+# ============================================================
+# EXPERIMENT 2 — DESCRIPTIVE RESULTS
+# Evidence–verdict alignment
+# ============================================================
 
-pivot_evidence <- df %>%
+library(dplyr)
+library(tidyr)
+
+# Run cleaning script
+source(
+  "2. Evidence-verdict_alignment/scripts/01_cleaning.R"
+)
+
+# ------------------------------------------------------------
+# 1. Evidence supports final verdict
+# ------------------------------------------------------------
+
+evidence_summary <- df %>%
   count(
     lg,
     evidences_support_final_answers_yes_partially_no
   ) %>%
-  tidyr::pivot_wider(
-    names_from = lg,
-    values_from = n,
-    values_fill = 0
-  )
-
-pivot_evidence
-
-# Convert in percentages 
-pivot_pct <- df %>%
   group_by(lg) %>%
-  count(evidences_support_final_answers_yes_partially_no) %>%
-  mutate(percent = round(100 * n / sum(n), 1))
-
-pivot_pct
-
-# Cross-tab for any variable
-df %>%
-  count(lg, relies_on_rag_yes_mixed_no_unclear) %>%
-  tidyr::pivot_wider(
-    names_from = lg,
-    values_from = n,
-    values_fill = 0
+  mutate(
+    percent = 100 * n / sum(n)
   )
 
-df %>%
-  count(lg, flags_uncertainty_in_claim_yes_no) %>%
-  tidyr::pivot_wider(
-    names_from = lg,
-    values_from = n,
-    values_fill = 0
+evidence_summary
+
+
+# Overall distribution
+evidence_overall <- df %>%
+  count(
+    evidences_support_final_answers_yes_partially_no
+  ) %>%
+  mutate(
+    percent = 100 * n / sum(n)
   )
 
-# MEAN
+evidence_overall
 
-df %>%
+
+# ------------------------------------------------------------
+# 2. Reliance on RAG
+# ------------------------------------------------------------
+
+rag_summary <- df %>%
+  count(
+    lg,
+    relies_on_rag_yes_mixed_no_unclear
+  ) %>%
   group_by(lg) %>%
-  summarise(
-    mean_score = mean(veracity_score, na.rm = TRUE),
-    sd = sd(veracity_score, na.rm = TRUE),
-    n = n()
+  mutate(
+    percent = 100 * n / sum(n)
   )
+
+rag_summary
+
+
+rag_overall <- df %>%
+  count(
+    relies_on_rag_yes_mixed_no_unclear
+  ) %>%
+  mutate(
+    percent = 100 * n / sum(n)
+  )
+
+rag_overall
+
+
+# ------------------------------------------------------------
+# 3. Uncertainty in the claim
+# ------------------------------------------------------------
+
+claim_uncertainty <- df %>%
+  count(
+    lg,
+    flags_uncertainty_in_claim_yes_no
+  ) %>%
+  group_by(lg) %>%
+  mutate(
+    percent = 100 * n / sum(n)
+  )
+
+claim_uncertainty
+
+
+# ------------------------------------------------------------
+# 4. Uncertainty in retrieved/search evidence
+# ------------------------------------------------------------
+
+search_uncertainty <- df %>%
+  count(
+    lg,
+    flags_uncertainty_in_the_search_results_yes_no
+  ) %>%
+  group_by(lg) %>%
+  mutate(
+    percent = 100 * n / sum(n)
+  )
+
+search_uncertainty

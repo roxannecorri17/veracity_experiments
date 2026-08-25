@@ -7,8 +7,8 @@ library(tidyverse)
 # 1. Import datasets
 # ------------------------------------------------------------
 
-dataset_false <- read_csv("data/veracity_1.3 - false_cvs.csv")
-dataset_true  <- read_csv("data/veracity_1.3 - true_cvs.csv")
+dataset_false <- read_csv("1. Cross-language performance and retrieval quality/data/veracity_1.3 - false_cvs.csv")
+dataset_true  <- read_csv("1. Cross-language performance and retrieval quality/data/veracity_1.3 - true_cvs.csv")
 
 
 # ------------------------------------------------------------
@@ -21,7 +21,7 @@ dataset_false <- dataset_false %>%
   mutate(
     accuracy = case_when(
       is.na(score) ~ NA,
-      score < 50 ~ 1,
+      score <= 50 ~ 1,
       TRUE ~ 0
     )
   )
@@ -167,6 +167,6 @@ graph_true
 dir.create("figures", showWarnings = FALSE)
 
 # Save figures
-ggsave("figures/accuracy_png/accuracy_false.png", plot = graph_false, width = 7, height = 5, dpi = 300)
+ggsave("1. Cross-language performance and retrieval quality/figures/accuracy_png/accuracy_false.png", plot = graph_false, width = 7, height = 5, dpi = 300)
 
-ggsave("figures/accuracy_png/accuracy_true.png", plot = graph_true, width = 7, height = 5, dpi = 300)
+ggsave("1. Cross-language performance and retrieval quality/figures/accuracy_png/accuracy_true.png", plot = graph_true, width = 7, height = 5, dpi = 300)

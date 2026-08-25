@@ -12,12 +12,12 @@ library(readxl)
 # ------------------------------------------------------------
 
 false_sources <- read_excel(
-  "data/veracity_1.3.xlsx",
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3.xlsx",
   sheet = "false_sources"
 )
 
 true_sources <- read_excel(
-  "data/veracity_1.3.xlsx",
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3.xlsx",
   sheet = "true_sources"
 )
 
@@ -175,7 +175,7 @@ dir.create(
 )
 
 ggsave(
-  "figures/relevance_png/source_relevance_english_vs_french.png",
+  "1. Cross-language performance and retrieval quality/figures/relevance_png/source_relevance_english_vs_french.png",
   plot = graph_relevance_language,
   width = 10,
   height = 6,

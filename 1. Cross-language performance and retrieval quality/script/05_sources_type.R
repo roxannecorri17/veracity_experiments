@@ -12,12 +12,12 @@ library(readxl)
 # ------------------------------------------------------------
 
 false_sources <- read_excel(
-  "data/veracity_1.3.xlsx",
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3.xlsx",
   sheet = "false_sources"
 )
 
 true_sources <- read_excel(
-  "data/veracity_1.3.xlsx",
+  "1. Cross-language performance and retrieval quality/data/veracity_1.3.xlsx",
   sheet = "true_sources"
 )
 
@@ -220,7 +220,7 @@ dir.create(
 )
 
 ggsave(
-  "figures/sources_type_png/source_types_false.png",
+  "1. Cross-language performance and retrieval quality/figures/sources_type_png/source_types_false.png",
   plot = graph_source_type_false,
   width = 9,
   height = 6,
@@ -228,7 +228,7 @@ ggsave(
 )
 
 ggsave(
-  "figures/sources_type_png/source_types_true.png",
+  "1. Cross-language performance and retrieval quality/figures/sources_type_png/source_types_true.png",
   plot = graph_source_type_true,
   width = 9,
   height = 6,
@@ -236,7 +236,7 @@ ggsave(
 )
 
 ggsave(
-  "figures/sources_type_png/source_types_overall.png",
+  "1. Cross-language performance and retrieval quality/figures/sources_type_png/source_types_overall.png",
   plot = graph_source_type_overall,
   width = 9,
   height = 6,
@@ -356,7 +356,7 @@ dir.create(
 )
 
 ggsave(
-  "figures/sources_type_png/source_types_english_vs_french.png",
+  "1. Cross-language performance and retrieval quality/figures/sources_type_png/source_types_english_vs_french.png",
   plot = graph_source_type_language,
   width = 11,
   height = 6,

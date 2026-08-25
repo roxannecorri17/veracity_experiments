@@ -68,11 +68,10 @@ df_acc <- df_clean %>%
     #
     # > 50 = SUPPORTS / TRUE
     # < 50 = REFUTES / FALSE
-    # = 50 = uncertain, therefore excluded
+  
     prediction = case_when(
       score > 50 ~ "true",
-      score < 50 ~ "false",
-      score == 50 ~ NA_character_,
+      score <= 50 ~ "false",
       TRUE ~ NA_character_
     ),
     
@@ -361,7 +360,7 @@ accuracy_graph
 # ------------------------------------------------------------
 
 ggsave(
-  "figures/graph_accuracy_annote.png",
+  "3. Wording_sensitivity/figures/graph_accuracy_annote.png",
   plot = accuracy_graph,
   width = 7,
   height = 5,

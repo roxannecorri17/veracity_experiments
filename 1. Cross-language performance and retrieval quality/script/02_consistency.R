@@ -8,8 +8,8 @@ library(tidyverse)
 # 1. Import datasets
 # ------------------------------------------------------------
 
-dataset_false <- read_csv("data/veracity_1.3 - false_cvs.csv")
-dataset_true  <- read_csv("data/veracity_1.3 - true_cvs.csv")
+dataset_false <- read_csv("1. Cross-language performance and retrieval quality/data/veracity_1.3 - false_cvs.csv")
+dataset_true  <- read_csv("1. Cross-language performance and retrieval quality/data/veracity_1.3 - true_cvs.csv")
 
 
 # ------------------------------------------------------------
@@ -451,7 +451,6 @@ cor_false_response
 
 
 # ============================================================
-# F. OPTIONAL:
 # ASSOCIATION BETWEEN SCORE CONSISTENCY
 # AND RESPONSE CONSISTENCY
 # ============================================================
@@ -478,7 +477,7 @@ dir.create(
 )
 
 ggsave(
-  "figures/consistency_png/sources_in_common.png",
+  "1. Cross-language performance and retrieval quality/figures/consistency_png/sources_in_common.png",
   plot = graph_sources,
   width = 8,
   height = 5,
@@ -486,7 +485,7 @@ ggsave(
 )
 
 ggsave(
-  "figures/consistency_png/score_consistency.png",
+  "1. Cross-language performance and retrieval quality/figures/consistency_png/score_consistency.png",
   plot = graph_score_consistency,
   width = 8,
   height = 5,
@@ -494,7 +493,7 @@ ggsave(
 )
 
 ggsave(
-  "figures/consistency_png/response_consistency.png",
+  "1. Cross-language performance and retrieval quality/figures/consistency_png/response_consistency.png",
   plot = graph_response_consistency,
   width = 8,
   height = 5,

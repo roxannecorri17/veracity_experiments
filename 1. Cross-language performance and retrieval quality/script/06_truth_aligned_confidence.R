@@ -8,8 +8,8 @@ library(tidyverse)
 # 1. Import datasets
 # ------------------------------------------------------------
 
-dataset_false <- read_csv("data/veracity_1.3 - false_cvs.csv")
-dataset_true  <- read_csv("data/veracity_1.3 - true_cvs.csv")
+dataset_false <- read_csv("1. Cross-language performance and retrieval quality/data/veracity_1.3 - false_cvs.csv")
+dataset_true  <- read_csv("1. Cross-language performance and retrieval quality/data/veracity_1.3 - true_cvs.csv")
 
 
 # ------------------------------------------------------------
@@ -300,7 +300,7 @@ wilcox.test(
 dir.create("figures", showWarnings = FALSE)
 
 ggsave(
-  "figures/truth_aligned_confidence_png/truth_aligned_confidence.png",
+  "1. Cross-language performance and retrieval quality/figures/truth_aligned_confidence_png/truth_aligned_confidence.png",
   plot = graph_confidence,
   width = 8,
   height = 5,
@@ -308,7 +308,7 @@ ggsave(
 )
 
 ggsave(
-  "figures/truth_aligned_confidence_png/truth_aligned_confidence_distribution.png",
+  "1. Cross-language performance and retrieval quality/figures/truth_aligned_confidence_png/truth_aligned_confidence_distribution.png",
   plot = graph_confidence_distribution,
   width = 8,
   height = 5,
