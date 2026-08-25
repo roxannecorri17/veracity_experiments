@@ -12,7 +12,7 @@ We conducted three complementary experiments using the deployed Veracity interfa
 2. **Evidence–verdict alignment**
 3. **Wording sensitivity**
 
-The repository contains the datasets, preprocessing scripts, statistical analyses, and figures associated with these experiments.
+The repository contains the datasets and R scripts used to reproduce the preprocessing, statistical analyses, and figures associated with these experiments.
 
 ## Repository Structure
 
