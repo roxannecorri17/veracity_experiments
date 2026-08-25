@@ -1,4 +1,3 @@
-# veracity_experiment_1.3
 # Veracity: Human-Controlled Evaluation Experiments
 
 This repository contains the data and R scripts used for the **human-controlled evaluation of Veracity**, a deployed AI fact-checking system. The evaluation examines the behavioural robustness of Veracity across English and French and identifies potential failure modes related to evidence retrieval and claim formulation.
